@@ -1,7 +1,7 @@
 public enum PlaneType {
-    BOEING747(300, 41000),
+    BOEING747(250, 41000),
     BOEING777(200, 39000),
-    BOEING737MAX(500, 46000);
+    BOEING737MAX(300, 46000);
 
     private final int capacity;
 
@@ -12,4 +12,11 @@ public enum PlaneType {
         this.totalWeight = totalWeight;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public double getTotalWeight() {
+        return totalWeight;
+    }
 }
