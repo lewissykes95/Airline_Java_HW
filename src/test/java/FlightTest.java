@@ -19,7 +19,7 @@ public class FlightTest {
 @Before
     public void setUp() {
     passenger = new Passenger("David", 1);
-    pilot = new Pilot("John", Rank.CAPTAIN, "PA3467845");
+    pilot = new Pilot("John", Rank.CAPTAIN, "FN3467845");
     cabinCrewMember = new CabinCrewMember("Amy", Rank.FLIGHTATTENDANT);
     plane = new Plane(PlaneType.BOEING747);
     flight = new Flight(pilot, plane, "EZY814", "LDN", "EDI", "09:00");
