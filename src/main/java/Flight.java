@@ -16,10 +16,11 @@ public class Flight {
 
     private String departureAirport;
 
-    private String departureTime;
+    private Date departureTime;
 
 
-    public Flight(Pilot pilot, Plane plane, String flightNumber, String destination, String departureAirport, String departureTime) {
+
+    public Flight(Pilot pilot, Plane plane, String flightNumber, String destination, String departureAirport, Date departureTime) {
         this.pilot = pilot;
         this.cabinCrewMembers = new ArrayList<>();
         this.bookedPassengers = new ArrayList<>();
@@ -54,7 +55,7 @@ public class Flight {
         return departureAirport;
     }
 
-    public String getDepartureTime() {
+    public Date getDepartureTime() {
         return departureTime;
     }
 

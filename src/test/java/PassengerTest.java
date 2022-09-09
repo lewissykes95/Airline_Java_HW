@@ -7,10 +7,23 @@ public class PassengerTest {
 
     Passenger passenger;
 
+    Flight flight;
+    Flight flight2;
+
+    Date date;
+
+    Pilot pilot;
+    Pilot pilot2;
+
+    Plane plane;
+    Plane plane2;
+
 
     @Before
     public void setUp() {
-        passenger = new Passenger("David", 1);
+        passenger = new Passenger("David", 1, flight, 20);
+        flight = new Flight(pilot, plane, "EZY814", "LDN", "EDI", date);
+        flight2 = new Flight(pilot2, plane2, "EZY954", "PAR", "MAN", date);
     }
 
     @Test
@@ -22,6 +35,19 @@ public class PassengerTest {
     public void canGetPassengerBags() {
         assertEquals(1, passenger.getNumberOfBags());
     }
+
+    @Test
+    public void canGetSeatNumber() {
+        assertEquals(20, passenger.getSeatNumber());
+    }
+
+    @Test
+    public void canAssignFlight() {
+        passenger.setFlight(flight2);
+        assertEquals(flight2, passenger.getFlight());
+    }
+
+
 
 
 }

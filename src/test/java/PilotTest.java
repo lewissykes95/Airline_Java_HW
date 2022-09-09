@@ -11,12 +11,14 @@ public class PilotTest {
     Plane plane;
     Flight flight;
 
+    Date date;
+
 
     @Before
     public void setUp(){
         pilot = new Pilot("John", Rank.CAPTAIN, "FN3467845");
         plane = new Plane(PlaneType.BOEING747);
-        flight = new Flight(pilot, plane, "EZY814", "LDN", "EDI", "09:00");
+        flight = new Flight(pilot, plane, "EZY814", "LDN", "EDI", date);
 
     }
 

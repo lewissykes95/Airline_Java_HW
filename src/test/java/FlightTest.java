@@ -12,17 +12,16 @@ public class FlightTest {
     CabinCrewMember cabinCrewMember;
     Flight flight;
     Plane plane;
-
-
+    Date date;
 
 
 @Before
     public void setUp() {
-    passenger = new Passenger("David", 1);
+    passenger = new Passenger("David", 1, flight, 20);
     pilot = new Pilot("John", Rank.CAPTAIN, "FN3467845");
     cabinCrewMember = new CabinCrewMember("Amy", Rank.FLIGHTATTENDANT);
     plane = new Plane(PlaneType.BOEING747);
-    flight = new Flight(pilot, plane, "EZY814", "LDN", "EDI", "09:00");
+    flight = new Flight(pilot, plane, "EZY814", "LDN", "EDI", date);
 }
 
 
@@ -43,7 +42,7 @@ public void canGetDepartureAirport() {
 
 @Test
 public void canGetDepartureTime() {
-    assertEquals("09:00", flight.getDepartureTime());
+    assertEquals(date, flight.getDepartureTime());
 }
 
 
