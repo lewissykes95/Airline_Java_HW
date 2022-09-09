@@ -30,6 +30,33 @@ public class Flight {
         this.departureTime = departureTime;
     }
 
+    public Pilot getPilot() {
+        return pilot;
+    }
+
+    public ArrayList<CabinCrewMember> getCabinCrewMembers() {
+        return cabinCrewMembers;
+    }
+
+    public Plane getPlane() {
+        return plane;
+    }
+
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public String getDepartureAirport() {
+        return departureAirport;
+    }
+
+    public String getDepartureTime() {
+        return departureTime;
+    }
 
     public int getBookedPassengers() {
         return bookedPassengers.size();
@@ -40,4 +67,6 @@ public class Flight {
             this.bookedPassengers.add(passenger);
         }
     }
+
+
 }
