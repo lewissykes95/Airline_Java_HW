@@ -14,4 +14,15 @@ public class FlightManager {
             return baggageAllowance;
         }
     }
+
+
+    public int bookBaggage(Flight flight, Passenger passenger) {
+        int bagWeight = calculateWeight(flight);
+        if(passenger.getNumberOfBags() > 2) {
+            return 30;
+        } else {
+            return 20;
+        }
+
+    }
 }

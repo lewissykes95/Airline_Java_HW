@@ -7,6 +7,7 @@ public class FlightManagerTest {
 
 
     Passenger passenger;
+    Passenger passenger2;
 
     Plane plane;
 
@@ -26,6 +27,7 @@ public class FlightManagerTest {
     @Before
     public void setUp() {
         passenger = new Passenger("David", 1);
+        passenger2 = new Passenger("David", 3);
         pilot = new Pilot("John", Rank.CAPTAIN, "FN3467845");
         pilot2 = new Pilot("Richard", Rank.CAPTAIN, "FN3534335");
         plane = new Plane(PlaneType.BOEING747);
@@ -44,6 +46,17 @@ public class FlightManagerTest {
     public void canCalculateBaggageWeightForEachPassenger2() {
         assertEquals(30, flightManager.calculateWeight(flight2));
     }
+
+    @Test
+    public void calculateHowMuchBaggageBooked() {
+        assertEquals(20, flightManager.bookBaggage(flight, passenger));
+    }
+
+    @Test
+    public void calculateHowMuchBaggageBooked2() {
+        assertEquals(30, flightManager.bookBaggage(flight2, passenger2));
+    }
+
 
 
 }
