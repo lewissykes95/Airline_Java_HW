@@ -38,10 +38,9 @@ public class Passenger {
         return this.seatNumber;
     }
 
-    public ArrayList<Object> setRandomSeatNumber() {
+    public void setRandomSeatNumber() {
         int min = 1;
         int max = 50;
         this.seatNumber = (int)Math.floor(Math.random()*(max-min+1)+min);
-
     }
 }
