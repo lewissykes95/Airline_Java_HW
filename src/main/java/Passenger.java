@@ -1,4 +1,4 @@
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 
 public class Passenger {
     private String name;
@@ -38,11 +38,10 @@ public class Passenger {
         return this.seatNumber;
     }
 
-    public int setRandomSeatNumber() {
+    public ArrayList<Object> setRandomSeatNumber() {
         int min = 1;
         int max = 50;
-        int randomSeatNumber = (int)Math.floor(Math.random()*(max-min+1)+min);
-        this.seatNumber = randomSeatNumber;
-        return seatNumber;
+        this.seatNumber = (int)Math.floor(Math.random()*(max-min+1)+min);
+
     }
 }
