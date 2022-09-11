@@ -16,11 +16,11 @@ public class Flight {
 
     private String departureAirport;
 
-    private Date departureTime;
+    private Date date;
 
 
 
-    public Flight(Pilot pilot, Plane plane, String flightNumber, String destination, String departureAirport, Date departureTime) {
+    public Flight(Pilot pilot, Plane plane, String flightNumber, String destination, String departureAirport, Date date) {
         this.pilot = pilot;
         this.cabinCrewMembers = new ArrayList<>();
         this.bookedPassengers = new ArrayList<>();
@@ -28,7 +28,7 @@ public class Flight {
         this.flightNumber = flightNumber;
         this.destination = destination;
         this.departureAirport = departureAirport;
-        this.departureTime = departureTime;
+        this.date = date;
     }
 
     public Pilot getPilot() {
@@ -55,8 +55,8 @@ public class Flight {
         return departureAirport;
     }
 
-    public Date getDepartureTime() {
-        return departureTime;
+    public String getDateTime() {
+        return date.getTime();
     }
 
     public int getBookedPassengers() {
@@ -66,6 +66,7 @@ public class Flight {
     public void bookPassenger(Passenger passenger) {
         if(this.plane.getPlaneCapacity() > this.bookedPassengers.size()) {
             this.bookedPassengers.add(passenger);
+            passenger.setRandomSeatNumber();
         }
     }
 

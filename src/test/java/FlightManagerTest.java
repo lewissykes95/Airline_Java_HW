@@ -24,12 +24,11 @@ public class FlightManagerTest {
     Date date;
 
 
-
-
     @Before
     public void setUp() {
-        passenger = new Passenger("David", 1, flight, 20);
-        passenger2 = new Passenger("Lewis", 3, flight2, 25);
+        date = new Date("10:00");
+        passenger = new Passenger("David", 1, flight);
+        passenger2 = new Passenger("Lewis", 3, flight2);
         pilot = new Pilot("John", Rank.CAPTAIN, "FN3467845");
         pilot2 = new Pilot("Richard", Rank.CAPTAIN, "FN3534335");
         plane = new Plane(PlaneType.BOEING747);
@@ -40,24 +39,35 @@ public class FlightManagerTest {
     }
 
     @Test
-    public void canCalculateBaggageWeightForEachPassenger() {
+    public void canCalculateBaggageAllowanceForEachPassenger() {
         assertEquals(20, flightManager.calculateWeight(flight));
     }
 
     @Test
-    public void canCalculateBaggageWeightForEachPassenger2() {
+    public void canCalculateBaggageAllowanceForEachPassenger2() {
         assertEquals(30, flightManager.calculateWeight(flight2));
     }
 
     @Test
     public void calculateHowMuchBaggageBooked() {
-        assertEquals(20, flightManager.bookBaggage(flight, passenger));
+        assertEquals(20, flightManager.bookBaggage(flight, passenger2));
     }
 
     @Test
     public void calculateHowMuchBaggageBooked2() {
-        assertEquals(30, flightManager.bookBaggage(flight2, passenger2));
+        assertEquals(20, flightManager.bookBaggage(flight2, passenger));
     }
+
+    @Test
+    public void calculateTotalRemainingWeight() {
+        assertEquals(17480.00, flightManager.checkRemainingWeight(flight, passenger), 0.0);
+    }
+
+    @Test
+    public void calculateTotalRemainingWeight2() {
+        assertEquals(17470.00, flightManager.checkRemainingWeight(flight, passenger2), 0.0);
+    }
+
 
 
 

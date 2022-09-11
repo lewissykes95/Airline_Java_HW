@@ -17,7 +17,8 @@ public class FlightTest {
 
 @Before
     public void setUp() {
-    passenger = new Passenger("David", 1, flight, 20);
+    date = new Date("09:00");
+    passenger = new Passenger("David", 1, flight);
     pilot = new Pilot("John", Rank.CAPTAIN, "FN3467845");
     cabinCrewMember = new CabinCrewMember("Amy", Rank.FLIGHTATTENDANT);
     plane = new Plane(PlaneType.BOEING747);
@@ -42,7 +43,7 @@ public void canGetDepartureAirport() {
 
 @Test
 public void canGetDepartureTime() {
-    assertEquals(date, flight.getDepartureTime());
+    assertEquals("09:00", flight.getDateTime());
 }
 
 
@@ -56,5 +57,8 @@ public void canGetDepartureTime() {
     flight.bookPassenger(passenger);
     assertEquals(1, flight.getBookedPassengers());
 }
+
+
+
 
 }
