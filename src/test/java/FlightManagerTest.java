@@ -50,12 +50,12 @@ public class FlightManagerTest {
 
     @Test
     public void calculateHowMuchBaggageBooked() {
-        assertEquals(20, flightManager.bookBaggage(flight, passenger2));
+        assertEquals(20, flightManager.bookBaggage(flight, passenger));
     }
 
     @Test
     public void calculateHowMuchBaggageBooked2() {
-        assertEquals(20, flightManager.bookBaggage(flight2, passenger));
+        assertEquals(30, flightManager.bookBaggage(flight2, passenger2));
     }
 
     @Test
@@ -65,7 +65,7 @@ public class FlightManagerTest {
 
     @Test
     public void calculateTotalRemainingWeight2() {
-        assertEquals(17470.00, flightManager.checkRemainingWeight(flight, passenger2), 0.0);
+        assertEquals(19470.00, flightManager.checkRemainingWeight(flight2, passenger2), 0.0);
     }
 
 

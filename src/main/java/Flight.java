@@ -56,7 +56,7 @@ public class Flight {
     }
 
     public String getDateTime() {
-        return date.getTime();
+        return date.getDepartureTime();
     }
 
     public int getBookedPassengers() {

@@ -1,12 +1,12 @@
 public class Date {
 
-    private String time;
+    private String departureTime;
 
-    public Date(String time) {
-        this.time = time;
+    public Date(String departureTime) {
+        this.departureTime = departureTime;
     }
 
-    public String getTime() {
-        return time;
+    public String getDepartureTime() {
+        return departureTime;
     }
 }
